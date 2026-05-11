@@ -1,943 +1,136 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>APP</title>
-<style>
-    body { font-family: Arial, sans-serif; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Percorsi Google Maps</title>
+
+  <!-- Font Awesome per le icone -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eaf4ff, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
 
     .container {
-        display: flex;
-        gap: 20px; /* spazio tra le tabelle */
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
     }
 
-    table { 
-        border-collapse: collapse; 
-        width: 100%;
+    h1 {
+      font-size: 2.5rem;
+      color: #1a73e8;
+      margin-bottom: 10px;
     }
 
-    .table-wrapper {
-        width: 50%;
-    }
-	
-	.table-wrapper table {
-		margin-bottom: 10px; /* spazio tra una tabella e l'altra */
-	}
-
-    th, td { 
-        border: 1px solid #000; 
-        padding: 6px; 
-        text-align: left; 
+    p {
+      color: #555;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
     }
 
-    th { background-color: #f2f2f2; }
-
-    .section-title {
-        background-color: #d9d9d9;
-        font-weight: bold;
-        text-align: center;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
     }
 
-    @media print {
-        * {
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-        }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      color: #333;
     }
-</style>
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .card i {
+      font-size: 4rem;
+      color: #1a73e8;
+      margin-bottom: 20px;
+    }
+
+    .card span {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .card {
+        padding: 30px 15px;
+      }
+
+      .card i {
+        font-size: 3rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>I Miei Percorsi</h1>
+    <p>Seleziona uno dei percorsi per aprirlo su Google Maps.</p>
 
-<h1>Turno 118</h1>
+    <div class="cards">
+      <!-- Percorso 1 -->
+      <a href="INSERISCI_LINK_1" target="_blank" class="card">
+        <i class="fas fa-route"></i>
+        <span>Percorso 1</span>
+      </a>
 
-<div class="container">
-	
-	<div class="table-wrapper">
-		<table>
-			<tr>
-                <td colspan="6" class="section-title">Squadra</td>
-            </tr>
-			<tr>
-                <th>Nome</th>
-				<th>Cognome</th>
-                <th>Autista</th>
-				<th>Firma</th>
-				<th>Note</th>
-            </tr>
-            
-			<tr>
-				<td>Davide</td>
-				<td>Arena</td>
-				<td width="10%"><input type="checkbox"/></td>
-				<td></td>
-				<td>Non deve fare il milite a Serra Riccò, grazie</td>
-			</tr>
-            <tr>
-				<td></td>
-				<td></td>
-				<td width="10%"><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td></td>
-				<td></td>
-				<td width="10%"><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td width="10%"><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			
-		</table>
-		
-		<table>
-			<tr>
-                <th colspan="3" >Data turno</th>
-				<th width="15%" >Ora inizio</th>
-                <th width="15%" >Ora fine</th>
-            </tr>
-			<tr>
-				<td colspan="3">03/03/2026</td>
-				<td width="15%">21:00</td>
-				<td width="15%">00:00</td>
-			</tr>
-		</table>
-		
-	</div>
-	
-	<div class="table-wrapper">
-		<table>
-			<tr>
-                <td colspan="4" class="section-title">Mezzo</td>
-            </tr>
-			<tr>
-                <th>Targa</th>
-				<td width="70%">ft726dy</td>
-            </tr>
-            
-			<tr>
-				<th>Codice-118</th>
-				<td width="70%">6384</td>
-			</tr>
-            <tr>
-				<th>Codice-cri</th>
-				<td width="70%">3351</td>
-			</tr>
-			<tr>
-				<th>KM-partenza</th>
-				<td width="70%">80.000 km</td>
-			</tr>
-			<tr>
-				<th>Note</th>
-				<td width="70%">Spia rossa per anomalia motore</td>
-			</tr>
-		</table>
-	</div>
+      <!-- Percorso 2 -->
+      <a href="INSERISCI_LINK_2" target="_blank" class="card">
+        <i class="fas fa-map-location-dot"></i>
+        <span>Percorso 2</span>
+      </a>
 
-</div>
-
-<h1>Check List Materiale</h1>
-
-<div class="container">
-
-    <div class="table-wrapper">
-        <table>
-			<tr>
-                <td colspan="4" class="section-title">INGRESSO</td>
-            </tr>
-			<tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="30%">Note</th>
-            </tr>
-            <tr>
-				<td>Sedia</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Guanti monouso S/M/L</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Forbici Robin</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-		 </table>
-		<!-- ************************************************************** -->
-		 <table>
-			<tr>
-				<td colspan="4" class="section-title">SPORTELLO A</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-                <th width="10%">Presente</th>
-				<th width="30%">Note</th>
-            </tr>
-            
-            <tr>
-				<td>Lenzuola di riserva</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Padella</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Pappagallo</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Garze non sterili</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Sedia in tela</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Immobilizzatore pediatrico</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-		</table>
-		<!-- ************************************************************** -->
-		<table>
-			<tr>
-				<td colspan="4" class="section-title">DAE</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-				<th width="15%">Scadenza/Revisone</th>
-            </tr>
-            
-            <tr>
-				<td>DAE</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td style=" background: black; "></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>paistra adulto</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>paistra pediatrica</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>forbici</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>rasoio</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>garze</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td colspan="4" class="section-title">SPORTELLO B</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-				<th width="15%">Scadenza</th>
-            </tr>
-            
-            <tr>
-				<td>Ghiaccio in busta</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Ghiaccio Spray</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>fisiologiche</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>acqua ossigenata</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-		<!-- ************************************************************** -->
-		<table>
-			<tr>
-				<td colspan="3" class="section-title">ZAINO COLLARI</td>
-            </tr>
-            <tr>
-                <th width="65%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-            </tr>
-            
-            <tr>
-				<td>Collare Adulto</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Collare pediatrico</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-		</table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td colspan="4" class="section-title">MEDICAZIONE</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-				<th width="15%">Scadenza</th>
-            </tr>
-            
-            <tr>
-				<td>Cerotti</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Garze</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Teli sterili</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Guanti sterili</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Israliana</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-		<!-- ************************************************************** -->		
-		<table>	
-			<tr>
-				<td colspan="4" class="section-title">RIANIMAZIONE</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-				<th width="15%">Scadenza</th>
-            </tr>
-            
-            <tr>
-				<td>Cerotti</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Garze</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Tampo benda</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td class="section-title">Rifiuti</td>
-            </tr>
-            <tr>
-                <th>Controllare che il sacchetto dei rifiuti sia vuoto</th>
-            </tr>
-        </table>
+      <!-- Percorso 3 -->
+      <a href="INSERISCI_LINK_3" target="_blank" class="card">
+        <i class="fas fa-location-arrow"></i>
+        <span>Percorso 3</span>
+      </a>
     </div>
 
-    <div class="table-wrapper">
-        <table>
-			<tr>
-				<td colspan="4" class="section-title">SEZIONE M_A - Maschere Adulto</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-				<th width="15%">Scadenza</th>
-            </tr>
-            
-            <tr>
-				<td>MAschera adulto</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>MAschera adulto Reservoir</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-		<!-- ************************************************************** -->
-		<table>
-			<tr>
-				<td colspan="4" class="section-title">SEZIONE M_P - Maschere Pediatrica</td>
-            </tr>
-			<tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-				<th width="15%">Scadenza</th>
-            </tr>            
-            <tr>
-				<td>MAschera pediatrica</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>MAschera pediatrica Reservoir</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>			
-		</table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td colspan="4" class="section-title">ASPIRATORE PORTATITLE</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-				<th width="15%">Scadenza</th>
-            </tr>
-			
-			<tr>
-				<td>Aspiratore</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td style=" background: black; "></td>
-				<td style=" background: black; "></td>
-			</tr>
-            <tr>
-				<td>Sondini</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>			
-			<tr>
-				<td>Canule</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-           
-		</table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td colspan="4" class="section-title">BOMBOLE OSSIGENO</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Pressione (BAR)</th>
-				<th width="15%">Scadenza</th>
-            </tr>
-			<tr>
-				<td>Bombola 7L - Numero 1</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Bombola 7L - Numero 2</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-            <tr>
-				<td>Bombola 2L - sacca gialla anteriore</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Bombola 2L - posteriore di scorta</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-        </table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td colspan="5" class="section-title">Sportello C - Zaino pediatrico</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-				<th width="15%">Scadenza</th>
-            </tr>
-			<tr>
-				<td>Pallone autoespandibile</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Maschere Pediatrica</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Maschere Pediatrica Reservoir</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Tubo raccordo ossigeno</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Sacchetto x liquido parto</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Canule di GUEDEL N.0</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Canule di GUEDEL N.00</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Canule di GUEDEL N.000</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Canule di GUEDEL N.1</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Clamp</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Aspiratore nasale</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Pannolino</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Disiffettante a base di iodio</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Garze 10x10</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Telo isotermico pediatrico</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Guanti sterili</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Teli sterili</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-        </table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td colspan="5" class="section-title">Zaino soccorso</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-				<th width="15%">Scadenza</th>
-            </tr>
-			<tr>
-				<td>Guanti sterili</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Guanti NON sterili</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Saturimetri</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Pallone autoespandibile</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Reservoir</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Aspiratore manuale</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Fonendoscopio</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Sfigomanometro</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Termometro</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Maschere adulto</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Maschere adulto reservoir</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Maschere pediatrica</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Maschere pediatrica reservoir</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Tubo raccordo ossigeno</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Maschere AMBU</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Canula di GUEDEL</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Garze</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Buste ghiaccio</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Ghiaccio Spray</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Forbici</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Laccio emostatico</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Fisiologiche</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Cerotti tela</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Cerotti varie misure</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Steri-strip</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Bende autofissanti</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-				<td></td>
-			</tr>
-        </table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td colspan="5" class="section-title">Sportello D - Sacca Scoop</td>
-            </tr>
-            <tr>
-                <th width="65%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-            </tr>
-            
-            <tr>
-				<td>Cinghie</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Base fermacapo</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Blocchi laterali</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Fascia mentoniera</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Fascia frontale</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Fascia velcro ad H</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-        </table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td colspan="5" class="section-title">Sacca Spinale</td>
-            </tr>
-			<tr>
-                <th width="65%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="15%">Quantità</th>
-            </tr>
-			<tr>
-				<td>Ragno</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Base fermacapo</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Blocchi laterali</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Fascia mentoniera</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Fascia frontale</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-        </table>
-		<!-- ************************************************************** -->
-		<table>	
-			<tr>
-				<td colspan="5" class="section-title">MATERIALE TRAUMA</td>
-            </tr>
-            <tr>
-                <th width="60%">Materiale</th>
-				<th width="10%">Presente</th>
-                <th width="30%">Note</th>
-            </tr>
-			<tr>
-				<td>Scoop</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Spinale</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Barella ferno</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Sacca protezione air-bag</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>sked</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Ked</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Stecobenda</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Spinale pediatrica</td>
-				<td style=" text-align: center; "><input type="checkbox"/></td>
-				<td></td>
-			</tr>
-        </table>
-    </div>
-
-</div>
-
+    <footer>
+      Sostituisci INSERISCI_LINK_1, INSERISCI_LINK_2 e INSERISCI_LINK_3 con i tuoi link di Google Maps.
+    </footer>
+  </div>
 </body>
 </html>

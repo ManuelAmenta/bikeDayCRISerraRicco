@@ -52,20 +52,20 @@
       gap: 25px;
     }
 
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 40px 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-      color: #333;
+	.card {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  text-decoration: none;
+	  background: #ffffff;
+	  border-radius: 20px;
+	  padding: 30px 20px;
+	  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+	  transition: all 0.3s ease;
+	  color: #333;
 	  cursor: pointer;
-    }
+	}
 
 
     .card:hover {
@@ -79,10 +79,20 @@
       margin-bottom: 20px;
     }
 
-    .card span {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
+	.card span {
+	  font-size: 1.2rem;
+	  font-weight: bold;
+	  line-height: 1.2;
+	  margin-top: 0;
+	}
+	
+	.card img.icon {
+	  width: 130px;
+	  height: 130px;
+	  object-fit: contain;
+	  margin-bottom: 4px;
+	  display: block;
+	}
 	
 	.logo {
 	  display: block;
@@ -98,19 +108,47 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
+	@media (max-width: 600px) {
+	 
+	  h1 {
+		font-size: 1.8rem;
+	  }
 
-      .card {
-        padding: 30px 15px;
-      }
+	  p {
+		font-size: 1.15rem;
+		margin-bottom: 30px;
+	  }
 
-      .card i {
-        font-size: 3rem;
-      }
-    }
+	  .cards {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	  }
+
+	  .card {
+		padding: 30px 20px;
+	  }
+
+	  .card img.icon {
+		width: 160px;
+		height: 160px;
+		margin-bottom: 1px;
+	  }
+
+	  .card span {
+		font-size: 1.3rem;
+		line-height: 1.25;
+	  }
+
+	  .logo {
+		max-width: 250px;
+		margin-bottom: 15px;
+	  }
+
+	  footer {
+		font-size: 1rem;
+		margin-top: 30px;
+	  }
+	}
   </style>
 </head>
 <body>
@@ -121,20 +159,20 @@
     <div class="cards">
       <!-- Percorso 1 -->
       <a href="https://www.google.com/maps/d/edit?mid=17322yID4e6fkBwBSlZgANBGcPLxjpEo&usp=sharing" target="_blank" class="card">
-        <i class="fas fa-route"></i>
-        <span>Percorso ORERO</span>
+        <img src="iconaMontagna.png" alt="Icona Montagna" class="icon">
+		<span>Percorso ORERO</span>
       </a>
 
       <!-- Percorso 2 -->
       <a href="https://www.google.com/maps/d/edit?mid=15G8nfPjyXxmd6XJIJ0Qua68EUX-oRQ0&usp=sharing" target="_blank" class="card">
-        <i class="fas fa-map-location-dot"></i>
+        <img src="iconaChiesa.png" alt="Icona Chiesa" class="icon">
         <span>Percorso VALLEREGIA</span>
       </a>
 
       <!-- Percorso 3 -->
       <a href="https://www.google.com/maps/d/edit?mid=1V0O7CP4_JDTk_Ha-N5PYQ7JFZ97hCvc&usp=sharing" target="_blank" class="card">
-        <i class="fas fa-location-arrow"></i>
-        <span>Percorso SERRA - SANCI - MIGNANEGO</span>
+		<img src="iconaCabannina.png" alt="Icona Mucca" class="icon">
+		<span>Percorso SERRA - SANCI - MIGNANEGO</span>
       </a>
     </div>
 
